@@ -13,7 +13,7 @@ const AlpacaProfile = ({alpacaBody}) => {
             <AlpacaBackground image={alpacaBody.backgroundImage} />
             <AlpacaEars image={alpacaBody.earsImage} />
             <AlpacaNeck image={alpacaBody.neckImage} />
-            <AlpacaLeg image={alpacaBody.legImage} />
+            <AlpacaLeg image={alpacaBody.legsImage} />
             <AlpacaNose image={alpacaBody.noseImage} />
             <AlpacaHair image={alpacaBody.hairImage} />
             <AlpacaEyes image={alpacaBody.eyesImage} />

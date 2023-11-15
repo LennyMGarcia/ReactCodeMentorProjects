@@ -9,8 +9,14 @@ import AccesorizeAlpaca from './components/AccessoriceAlpaca.jsx'
 import AlpacaEarsStyle from './components/AlpacaBodyComponents/AlpacaEarsStyle.jsx'
 import AlpacaAccessoriesStyle from './components/AlpacaBodyComponents/AlpacaAccessoriesStyle.jsx'
 import AlpacaHairStyle from './components/AlpacaBodyComponents/AlpacaHairStyle.jsx'
+import AlpacaNeckStyle from './components/AlpacaBodyComponents/AlpacaNeckStyle.jsx'
 
 import Gallery from './AlpacaGallery.js'
+import AlpacaLegStyle from './components/AlpacaBodyComponents/AlpacaLegStyle.jsx'
+import AlpacaMouthStyle from './components/AlpacaBodyComponents/AlpacaMouthStyle.jsx'
+import AlpacaEyesStyle from './components/AlpacaBodyComponents/AlpacaEyesStyle.jsx'
+import AlpacaBackgroundStyle from './components/AlpacaBodyComponents/AlpacaBackgroundSyle.jsx'
+
 
 
 
@@ -33,11 +39,11 @@ function App() {
   const buttonAccessoriesFunctions = {
     earsButton: () => setComponentVisible('EARS'),
     accesoryButton: () => setComponentVisible("ACCESSORIES"),
-    neckButton: () => console.log('neck enable'),
-    backgroundButton: () => console.log('background enable'),
-    eyesButton: () => console.log('eyes enable'),
-    legButton: () => console.log('leg enable'),
-    mouthButton: () => console.log('mouth enable'),
+    neckButton: () => setComponentVisible('NECK'),
+    backgroundButton: () => setComponentVisible('BACKGROUND'),
+    eyesButton: () => setComponentVisible('EYES'),
+    legButton: () => setComponentVisible('LEG'),
+    mouthButton: () => setComponentVisible('MOUTH'),
     hairButton: () => setComponentVisible('HAIR'),
   }
 
@@ -119,6 +125,156 @@ function App() {
     
   }
 
+  const alpacaNeckButtonFunctions = {
+    defaultButton: () => setAlpacaBodyImage((prevState) => ({
+      ...prevState,
+      neckImage: Gallery.neck.default
+    })),
+
+    bendBackwardButton: () => setAlpacaBodyImage((prevState) => ({
+      ...prevState,
+      neckImage: Gallery.neck.bendBackward
+    })),
+
+    bendForwardButton: () => setAlpacaBodyImage((prevState) => ({
+      ...prevState,
+      neckImage: Gallery.neck.bendForward
+    })),
+
+    thickButton: () => setAlpacaBodyImage((prevState) => ({
+      ...prevState,
+      neckImage: Gallery.neck.thick
+    })),
+
+  }
+
+  const alpacaLegButtonFunctions = {
+    defaultButton: () => setAlpacaBodyImage((prevState) => ({
+      ...prevState,
+      legsImage: Gallery.legs.default
+    })),
+
+    tiltBackwardButton: () => setAlpacaBodyImage((prevState) => ({
+      ...prevState,
+      legsImage: Gallery.legs.tiltBackward
+    })),
+
+    tiltForwardButton: () => setAlpacaBodyImage((prevState) => ({
+      ...prevState,
+      legsImage: Gallery.legs.tiltForward
+    })),
+
+    cookieButton: () => setAlpacaBodyImage((prevState) => ({
+      ...prevState,
+      legsImage: Gallery.legs.cookie
+    })),
+
+    bubbleTeaButton: () => setAlpacaBodyImage((prevState) => ({
+      ...prevState,
+      legsImage: Gallery.legs.bubbleTea
+    })),
+
+    gameConsoleButton: () => setAlpacaBodyImage((prevState) => ({
+      ...prevState,
+      legsImage: Gallery.legs.gameConsole
+    })),
+
+  }
+
+  const alpacaMouthButtonFunctions = {
+    defaultButton: () => setAlpacaBodyImage((prevState) => ({
+      ...prevState,
+      mouthImage: Gallery.mouth.default
+    })),
+
+    astonishedButton: () => setAlpacaBodyImage((prevState) => ({
+      ...prevState,
+      mouthImage: Gallery.mouth.astonished
+    })),
+
+    eatingButton: () => setAlpacaBodyImage((prevState) => ({
+      ...prevState,
+      mouthImage: Gallery.mouth.eating
+    })),
+
+    laughButton: () => setAlpacaBodyImage((prevState) => ({
+      ...prevState,
+      mouthImage: Gallery.mouth.laugh
+    })),
+
+    tongueButton: () => setAlpacaBodyImage((prevState) => ({
+      ...prevState,
+      mouthImage: Gallery.mouth.tongue
+    })),
+
+  }
+
+  const alpacaEyesButtonFunctions = {
+    defaultButton: () => setAlpacaBodyImage((prevState) => ({
+      ...prevState,
+      eyesImage: Gallery.eyes.default
+    })),
+
+    angryButton: () => setAlpacaBodyImage((prevState) => ({
+      ...prevState,
+      eyesImage: Gallery.eyes.angry
+    })),
+
+    naughtyButton: () => setAlpacaBodyImage((prevState) => ({
+      ...prevState,
+      eyesImage: Gallery.eyes.naughty
+    })),
+
+    pandaButton: () => setAlpacaBodyImage((prevState) => ({
+      ...prevState,
+      eyesImage: Gallery.eyes.panda
+    })),
+
+    smartButton: () => setAlpacaBodyImage((prevState) => ({
+      ...prevState,
+      eyesImage: Gallery.eyes.smart
+    })),
+
+    starButton: () => setAlpacaBodyImage((prevState) => ({
+      ...prevState,
+      eyesImage: Gallery.eyes.star
+    })),
+  }
+
+  const alpacaBackgroundButtonFunctions = {
+    blueButton: () => setAlpacaBodyImage((prevState) => ({
+      ...prevState,
+      backgroundImage: Gallery.backgrounds.blue
+    })),
+
+    darkblueButton: () => setAlpacaBodyImage((prevState) => ({
+      ...prevState,
+      backgroundImage: Gallery.backgrounds.darkBlue
+    })),
+
+    greenButton: () => setAlpacaBodyImage((prevState) => ({
+      ...prevState,
+      backgroundImage: Gallery.backgrounds.green
+    })),
+
+    greyButton: () => setAlpacaBodyImage((prevState) => ({
+      ...prevState,
+      backgroundImage: Gallery.backgrounds.grey
+    })),
+
+    redButton: () => setAlpacaBodyImage((prevState) => ({
+      ...prevState,
+      backgroundImage: Gallery.backgrounds.red
+    })),
+
+    yellowButton: () => setAlpacaBodyImage((prevState) => ({
+      ...prevState,
+      backgroundImage: Gallery.backgrounds.yellow
+    })),
+
+
+  }
+
   return (
     <>
       <h1>ALPACA GENERATOR</h1>
@@ -132,6 +288,11 @@ function App() {
             <br /><br />
             {componentVisible == 'EARS' && <AlpacaEarsStyle buttonFunctions={alpacaEarsButtonFunctions} />}
             {componentVisible == 'HAIR' && <AlpacaHairStyle buttonFunctions={alpacaHairButtonFunctions} />}
+            {componentVisible == 'NECK' && <AlpacaNeckStyle buttonFunctions={alpacaNeckButtonFunctions} />}
+            {componentVisible == 'LEG' && <AlpacaLegStyle buttonFunctions={alpacaLegButtonFunctions} />}
+            {componentVisible == 'MOUTH' && <AlpacaMouthStyle buttonFunctions={alpacaMouthButtonFunctions} />}
+            {componentVisible == 'EYES' && <AlpacaEyesStyle buttonFunctions={alpacaEyesButtonFunctions} />}
+            {componentVisible == 'BACKGROUND' && <AlpacaBackgroundStyle buttonFunctions={alpacaBackgroundButtonFunctions} />}
             {componentVisible == 'ACCESSORIES' && <AlpacaAccessoriesStyle buttonFunctions={alpacaAccessoriesButtonFunctions} />}
           </div>
         </div>

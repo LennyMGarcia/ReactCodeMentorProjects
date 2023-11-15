@@ -15,6 +15,7 @@ const Gallery = {
         green:"../src/assets/alpaca/backgrounds/green50.png",
         yellow:"../src/assets/alpaca/backgrounds/yellow50.png",
         red:"../src/assets/alpaca/backgrounds/red50.png",
+        grey:"../src/assets/alpaca/backgrounds/grey40.png",
     },
     ears: {
         default: '../src/assets/alpaca/ears/default.png',
@@ -28,7 +29,7 @@ const Gallery = {
         naughty:'../src/assets/alpaca/eyes/naughty.png',
         panda:'../src/assets/alpaca/eyes/panda.png',
         smart:'../src/assets/alpaca/eyes/smart.png',
-        start:'../src/assets/alpaca/eyes/start.png'
+        star:'../src/assets/alpaca/eyes/star.png'
 
     },
     hair: {

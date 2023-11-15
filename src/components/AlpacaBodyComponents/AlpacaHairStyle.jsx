@@ -41,7 +41,7 @@ const Bang = ({ onClick }) => {
 
     return (
         <div className="alpaca-button-child">
-            <button onClick={onClick}>Tilt-backward</button>
+            <button onClick={onClick}>Bang</button>
         </div>
     );
 };
@@ -54,7 +54,7 @@ const Curls= ({ onClick }) => {
 
     return (
         <div className="alpaca-button-child">
-            <button onClick={onClick}>Tilt-foward</button>
+            <button onClick={onClick}>Curls</button>
         </div>
     );
 };
@@ -67,7 +67,7 @@ const Elegant = ({ onClick }) => {
 
     return (
         <div className="alpaca-button-child">
-            <button onClick={onClick}>Default</button>
+            <button onClick={onClick}>Elegant</button>
         </div>
     );
 };
@@ -80,7 +80,7 @@ const Fancy = ({ onClick }) => {
 
     return (
         <div className="alpaca-button-child">
-            <button onClick={onClick}>Tilt-backward</button>
+            <button onClick={onClick}>Fancy</button>
         </div>
     );
 };
@@ -93,7 +93,7 @@ const Quiff= ({ onClick }) => {
 
     return (
         <div className="alpaca-button-child">
-            <button onClick={onClick}>Tilt-foward</button>
+            <button onClick={onClick}>Quiff</button>
         </div>
     );
 };
@@ -106,7 +106,7 @@ const Short= ({ onClick }) => {
 
     return (
         <div className="alpaca-button-child">
-            <button onClick={onClick}>Tilt-foward</button>
+            <button onClick={onClick}>Short</button>
         </div>
     );
 };

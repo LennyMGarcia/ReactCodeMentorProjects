@@ -36,16 +36,14 @@
 
   .alpaca-button-child>button{
     background-color: transparent;
-    border:1px solid blue;
-    color: blue;
+    border:1px solid rgb(0, 204, 255);;
+    color: rgb(0, 204, 255);;
     width: 120px;
     font-size: 15px;
-
-   
   }
 
   .alpaca-button-child>button:hover{
-    background-color: blue;
+    background-color: rgb(0, 204, 255);
     border:1px solid white;
     color:white;
   }
