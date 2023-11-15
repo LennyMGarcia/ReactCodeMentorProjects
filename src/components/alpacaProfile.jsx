@@ -1,44 +1,30 @@
 
-import accesoryImage from '../assets/alpaca/accessories/earings.png';
-import backgroundImage from '../assets/alpaca/backgrounds/blue50.png';
-import earsImage from '../assets/alpaca/ears/default.png';
-import eyesImage from '../assets/alpaca/eyes/angry.png';
-import hairImage from '../assets/alpaca/hair/bang.png';
-import legsImage from '../assets/alpaca/leg/bubble-tea.png';
-import mouthImage from '../assets/alpaca/mouth/astonished.png';
-import neckImage from '../assets/alpaca/neck/bend-backward.png';
-import noseImage from '../assets/alpaca/nose.png';
+
 
 import PropTypes from 'prop-types';
-import '../components/Alpaca.css'
+import '../components/AlpacaBodyComponents/Alpaca.css'
 
-const AlpacaProfile = () => {
+const AlpacaProfile = ({alpacaBody}) => {
 
-    const alpacaBody = {
-        accessory: accesoryImage,
-        background: backgroundImage,
-        ears: earsImage,
-        eyes: eyesImage,
-        hair: hairImage,
-        leg: legsImage,
-        mouth: mouthImage,
-        neck: neckImage,
-        nose: noseImage,
-    };
+    
 
     return (
         <div className="alpaca-Profile">
-            <AlpacaBackground image={alpacaBody.background} />
-            <AlpacaEars image={alpacaBody.ears} />
-            <AlpacaNeck image={alpacaBody.neck} />
-            <AlpacaAccesory image={alpacaBody.accessory} />
-            <AlpacaEyes image={alpacaBody.eyes} />
-            <AlpacaLeg image={alpacaBody.leg} />
-            <AlpacaMouth image={alpacaBody.mouth} />
-            <AlpacaNose image={alpacaBody.nose} />
-            <AlpacaHair image={alpacaBody.hair} />
+            <AlpacaBackground image={alpacaBody.backgroundImage} />
+            <AlpacaEars image={alpacaBody.earsImage} />
+            <AlpacaNeck image={alpacaBody.neckImage} />
+            <AlpacaLeg image={alpacaBody.legImage} />
+            <AlpacaNose image={alpacaBody.noseImage} />
+            <AlpacaHair image={alpacaBody.hairImage} />
+            <AlpacaEyes image={alpacaBody.eyesImage} />
+            <AlpacaAccesory image={alpacaBody.accessoryImage} />
+            <AlpacaMouth image={alpacaBody.mouthImage} />
         </div>
     );
+}
+
+AlpacaProfile.propTypes ={
+    alpacaBody: PropTypes.any
 }
 
 const AlpacaAccesory = ({ image }) => {
@@ -51,7 +37,7 @@ const AlpacaAccesory = ({ image }) => {
 };
 
 AlpacaAccesory.propTypes = {
-    image: PropTypes.string.isRequired,
+    image: PropTypes.string
 };
 
 const AlpacaBackground = ({ image }) => {
@@ -64,7 +50,7 @@ const AlpacaBackground = ({ image }) => {
 };
 
 AlpacaBackground.propTypes = {
-    image: PropTypes.string.isRequired,
+    image: PropTypes.string
 };
 
 const AlpacaEars = ({ image }) => {
@@ -77,7 +63,7 @@ const AlpacaEars = ({ image }) => {
 };
 
 AlpacaEars.propTypes = {
-    image: PropTypes.string.isRequired,
+    image: PropTypes.string
 };
 
 const AlpacaEyes = ({ image }) => {
@@ -90,7 +76,7 @@ const AlpacaEyes = ({ image }) => {
 };
 
 AlpacaEyes.propTypes = {
-    image: PropTypes.string.isRequired,
+    image: PropTypes.string
 };
 
 const AlpacaHair = ({ image }) => {
@@ -103,7 +89,7 @@ const AlpacaHair = ({ image }) => {
 };
 
 AlpacaHair.propTypes = {
-    image: PropTypes.string.isRequired,
+    image: PropTypes.string
 };
 
 const AlpacaLeg = ({ image }) => {
@@ -116,7 +102,7 @@ const AlpacaLeg = ({ image }) => {
 };
 
 AlpacaLeg.propTypes = {
-    image: PropTypes.string.isRequired,
+    image: PropTypes.string
 };
 
 
@@ -131,7 +117,7 @@ const AlpacaMouth = ({ image }) => {
 }
 
 AlpacaMouth.propTypes = {
-    image: PropTypes.string.isRequired,
+    image: PropTypes.string
 };
 
 const AlpacaNeck = ({ image }) => {
@@ -144,7 +130,7 @@ const AlpacaNeck = ({ image }) => {
 }
 
 AlpacaNeck.propTypes = {
-    image: PropTypes.string.isRequired,
+    image: PropTypes.string
 };
 
 const AlpacaNose = ({ image }) => {
@@ -157,7 +143,7 @@ const AlpacaNose = ({ image }) => {
 };
 
 AlpacaNose.propTypes = {
-    image: PropTypes.string.isRequired,
+    image: PropTypes.string
 };
 
 export default AlpacaProfile;

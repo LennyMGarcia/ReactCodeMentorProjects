@@ -1,25 +1,27 @@
 import PropTypes from 'prop-types';
-import '../components/Alpaca.css'
+import '../components/AlpacaBodyComponents/alpaca.css'
 
-const AccesorizeAlpaca = ({ buttonList }) => {
-
+const AccesorizeAlpaca = ({ buttonFunctions }) => {
+    const handleClick = (buttonFunction) => {
+        buttonFunction();
+    }
 
     return (
         <div className="alpaca-Buttons">
-            <AlpacaBackgroundButton onClick={buttonList.backgroundButton} />
-            <AlpacaEarsButton onClick={buttonList.earsButton} />
-            <AlpacaNeckButton onClick={buttonList.neckButton} />
-            <AlpacaAccesoryButton onClick={buttonList.accesoryButton} />
-            <AlpacaEyesButton onClick={buttonList.eyesButton} />
-            <AlpacaLegButton onClick={buttonList.legButton} />
-            <AlpacaMouthButton onClick={buttonList.mouthButton} />
-            <AlpacaHairButton onClick={buttonList.hairButton} />
+            <AlpacaBackgroundButton onClick={() => handleClick(buttonFunctions.backgroundButton)} />
+            <AlpacaEarsButton onClick={() => handleClick(buttonFunctions.earsButton)} />
+            <AlpacaNeckButton onClick={() => handleClick(buttonFunctions.neckButton)} />
+            <AlpacaAccesoryButton onClick={() => handleClick(buttonFunctions.accesoryButton)} />
+            <AlpacaEyesButton onClick={() => handleClick(buttonFunctions.eyesButton)} />
+            <AlpacaLegButton onClick={() => handleClick(buttonFunctions.legButton)} />
+            <AlpacaMouthButton onClick={() => handleClick(buttonFunctions.mouthButton)} />
+            <AlpacaHairButton onClick={() => handleClick(buttonFunctions.hairButton)} />
         </div>
     )
 }
 
 AccesorizeAlpaca.propTypes = {
-    buttonList: PropTypes.object.isRequired
+    buttonFunctions: PropTypes.object
 };
 
 const AlpacaAccesoryButton = ({ onClick }) => {
