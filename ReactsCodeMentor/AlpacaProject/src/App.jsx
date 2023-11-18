@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import './App.css'
 import './components/alpacaProfile'
-import Download from "../src/assets/icons/file_download_black_24dp.svg"
+//import Download from "../src/assets/icons/file_download_black_24dp.svg"
 import Shuffle from '../src/assets/icons/shuffle_black_24dp.svg'
 
 import AlpacaProfile from './components/alpacaProfile.jsx'
@@ -18,19 +18,21 @@ import AlpacaEyesStyle from './components/AlpacaBodyComponents/AlpacaEyesStyle.j
 import AlpacaBackgroundStyle from './components/AlpacaBodyComponents/AlpacaBackgroundSyle.jsx'
 
 import Gallery from './AlpacaGallery.js'
+import AlpacaImageHandler from './components/AlpacaDowloadHandler.jsx'
 
 function App() {
 
   const [alpacaBodyImage, setAlpacaBodyImage] = useState({
-    accessoryImage: Gallery.accessories.flower,
+    
     backgroundImage: Gallery.backgrounds.blue,
+    neckImage: Gallery.neck.default,
     earsImage: Gallery.ears.default,
-    eyesImage: Gallery.eyes.default,
     hairImage: Gallery.hair.default,
     legsImage: Gallery.legs.default,
     mouthImage: Gallery.mouth.default,
-    neckImage: Gallery.neck.default,
     noseImage: Gallery.nose.default,
+    accessoryImage: Gallery.accessories.flower,
+    eyesImage: Gallery.eyes.default,
   });
 
   const randomizer = (value) => {
@@ -41,15 +43,16 @@ function App() {
 
   const handleRandomizerButton = () => {
     setAlpacaBodyImage ({
-      accessoryImage:  randomizer(Gallery.accessories),
+      
       backgroundImage: randomizer(Gallery.backgrounds),
       earsImage: randomizer(Gallery.ears),
-      eyesImage:randomizer(Gallery.eyes),
       hairImage: randomizer(Gallery.hair),
       legsImage: randomizer(Gallery.legs),
-      mouthImage: randomizer(Gallery.mouth),
       neckImage: randomizer(Gallery.neck),
       noseImage: randomizer(Gallery.nose),
+      accessoryImage:  randomizer(Gallery.accessories),
+      mouthImage: randomizer(Gallery.mouth),
+      eyesImage:randomizer(Gallery.eyes),
     })
   }
 
@@ -184,7 +187,7 @@ function App() {
       </div>
       <div className='other-buttton-container'>
         <button onClick={handleRandomizerButton} className='otherOptionButton'><img src={Shuffle} />Ramdom</button>
-        <button className='otherOptionButton'><img src={Download} />Download</button>
+        <AlpacaImageHandler alpacaBodyImage={alpacaBodyImage} className='otherOptionButton'></AlpacaImageHandler>
       </div>
     </>
   )
