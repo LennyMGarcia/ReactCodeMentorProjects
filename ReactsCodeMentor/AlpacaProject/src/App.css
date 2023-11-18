@@ -65,3 +65,22 @@ h3 {
   height: 200px;
 
 }
+
+.other-buttton-container{
+  margin-left: 100px;
+}
+
+.otherOptionButton{
+  color: black;
+  background-color: white;
+  width: 180px;
+  text-align: center;
+  justify-items: center;
+  border-radius: none;
+  margin-left: 10px;
+  margin-top: -60px;
+}
+
+.otherOptionButton>img{
+  width: 15px;
+}

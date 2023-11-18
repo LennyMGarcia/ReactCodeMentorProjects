@@ -2,6 +2,8 @@
 import { useState } from 'react'
 import './App.css'
 import './components/alpacaProfile'
+import Download from "../src/assets/icons/file_download_black_24dp.svg"
+import Shuffle from '../src/assets/icons/shuffle_black_24dp.svg'
 
 import AlpacaProfile from './components/alpacaProfile.jsx'
 import AccesorizeAlpaca from './components/AccessoriceAlpaca.jsx'
@@ -30,6 +32,27 @@ function App() {
     neckImage: Gallery.neck.default,
     noseImage: Gallery.nose.default,
   });
+
+  const randomizer = (value) => {
+    const galleryKeys = Object.keys(value);
+    const ramdomIndex = Math.floor(Math.random() * galleryKeys.length);
+    return value[galleryKeys[ramdomIndex]]
+  }
+
+  const handleRandomizerButton = () => {
+    setAlpacaBodyImage ({
+      accessoryImage:  randomizer(Gallery.accessories),
+      backgroundImage: randomizer(Gallery.backgrounds),
+      earsImage: randomizer(Gallery.ears),
+      eyesImage:randomizer(Gallery.eyes),
+      hairImage: randomizer(Gallery.hair),
+      legsImage: randomizer(Gallery.legs),
+      mouthImage: randomizer(Gallery.mouth),
+      neckImage: randomizer(Gallery.neck),
+      noseImage: randomizer(Gallery.nose),
+    })
+  }
+
 
   const alpacaBIPropertiesNames = {
     accessory: 'accessoryImage',
@@ -118,17 +141,17 @@ function App() {
   const [componentVisible, setComponentVisible] = useState('')
 
   const alpacaComponents = {
-    EARS: <AlpacaEarsStyle buttonFunctions={alpacaEarsButtonFunctions}/>,
-    ACCESSORIES: <AlpacaAccessoriesStyle buttonFunctions={alpacaAccessoriesButtonFunctions}/>,
-    NECK: <AlpacaNeckStyle buttonFunctions={alpacaNeckButtonFunctions}/>,
-    BACKGROUND: <AlpacaBackgroundStyle buttonFunctions={alpacaBackgroundButtonFunctions}/>,
-    EYES: <AlpacaEyesStyle buttonFunctions={alpacaEyesButtonFunctions}/>,
-    LEG:  <AlpacaLegStyle buttonFunctions={alpacaLegButtonFunctions}/>,
-    MOUTH: <AlpacaMouthStyle buttonFunctions={alpacaMouthButtonFunctions}/>,
-    HAIR: <AlpacaHairStyle buttonFunctions={alpacaHairButtonFunctions}/>,
+    EARS: <AlpacaEarsStyle buttonFunctions={alpacaEarsButtonFunctions} />,
+    ACCESSORIES: <AlpacaAccessoriesStyle buttonFunctions={alpacaAccessoriesButtonFunctions} />,
+    NECK: <AlpacaNeckStyle buttonFunctions={alpacaNeckButtonFunctions} />,
+    BACKGROUND: <AlpacaBackgroundStyle buttonFunctions={alpacaBackgroundButtonFunctions} />,
+    EYES: <AlpacaEyesStyle buttonFunctions={alpacaEyesButtonFunctions} />,
+    LEG: <AlpacaLegStyle buttonFunctions={alpacaLegButtonFunctions} />,
+    MOUTH: <AlpacaMouthStyle buttonFunctions={alpacaMouthButtonFunctions} />,
+    HAIR: <AlpacaHairStyle buttonFunctions={alpacaHairButtonFunctions} />,
   }
 
-  const handleComponentChange = (component) =>{
+  const handleComponentChange = (component) => {
     setComponentVisible(component)
   }
 
@@ -158,6 +181,10 @@ function App() {
             <p>.</p>
           </div>
         </div>
+      </div>
+      <div className='other-buttton-container'>
+        <button onClick={handleRandomizerButton} className='otherOptionButton'><img src={Shuffle} />Ramdom</button>
+        <button className='otherOptionButton'><img src={Download} />Download</button>
       </div>
     </>
   )

@@ -28,6 +28,7 @@ body {
   display: flex;
   min-width: 320px;
   min-height: 100vh;
+  height: 300px;
 }
 
 h1 {
